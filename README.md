@@ -1,20 +1,32 @@
-# Custom Bar Chart
+# Custom Bar Chart 📊
 
-This custom bar chart library, helps our devs to design and customise bar graph with animations, it's easy to install and use. 
+A lightweight SwiftUI library for creating beautiful, interactive bar charts with effortless customization and smooth animations. Perfect for iOS developers who need elegant data visualization.
 
 ## Table of Contents
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
+- [Features](#-features)
+- [Requirements](#-requirements)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Customization](#-customization)
+- [Example](#-example)
 
-## Features ✨
-- Bar chart with customizable color animation, when user selects the bar it highlights the bar. 
-- Customizable lollipop info on top displayed when user holds the bar with x-axis and y-axis doted lines 
-- Supports from iOS 16 version
+## ✨ Features
+- 🎨 Fully customizable bar colors and animations
+- 👆 Interactive touch handling with selection highlight
+- 💬 lollipop tooltips 
+- 📈 Auto-scaling axis system with dotted guides
 
-## Installation 🛠️
-Step-by-step instructions to install:
-- Open Xcode -> file -> Add package dependencies -> search with "https://github.com/vilayathNCS/customBarGraph.git"
+
+## 📋 Requirements
+- Xcode 15+
+- Swift 5.9+
+- iOS 16.0+
+
+## 🛠️ Installation
+
+### Swift Package Manager
+1. In Xcode: **File → Add Package Dependencies...**
+2. Paste the repository URL: https://github.com/vilayathNCS/customBarGraph.git
 
 ## Example code snippet
 

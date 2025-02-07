@@ -55,7 +55,7 @@ struct SalesReportView: View {
 }
 ```
 # Image
-![image alt](https://github.com/vilayathNCS/customBarGraph/blob/ceaa8f07bc9f5e8b2196762160e2f1ce5c3bc64c/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-02-07%20at%2015.42.32.png)
+![image alt](https://github.com/vilayathNCS/customBarGraph/blob/f930d794fbb0d48a45ec31a2aba4e217771ad989/image%20(1).png)
 ![image alt](https://github.com/vilayathNCS/customBarGraph/blob/ceaa8f07bc9f5e8b2196762160e2f1ce5c3bc64c/image.png)
 
 

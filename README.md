@@ -28,32 +28,31 @@ A lightweight SwiftUI library for creating beautiful, interactive bar charts wit
 1. In Xcode: **File → Add Package Dependencies...**
 2. Paste the repository URL: https://github.com/vilayathNCS/customBarGraph.git
 
-## Example code snippet
+## 🚀 Usage
 
+### Basic Implementation
+```swift
 import SwiftUI
 import CustomBarChart
 
-struct ContentView: View {
-   
-    var body: some View {
-        VStack {
-            Text("Monthly Sales")
-                .font(.title)
-                .padding()
-            
-            BarChartView(data: data, configuration: .default)
-        }
-        .padding()
-    }
+struct SalesReportView: View {
+ let salesData = [
+     ChartDataPoint(label: "Jan", value: 7000),
+     ChartDataPoint(label: "Feb", value: 9000),
+     ChartDataPoint(label: "Mar", value: 4000),
+     ChartDataPoint(label: "Apr", value: 8500),
+     ChartDataPoint(label: "May", value: 6000)
+ ]
+ 
+ var body: some View {
+     BarChartView(
+         data: salesData,
+         configuration: ChartConfiguration.default
+     )
+     .frame(height: 300)
+     .padding()
+ }
 }
-
-let data: [ChartDataPoint] = [
-    ChartDataPoint(label: "Jan", value: 7000),
-    ChartDataPoint(label: "Feb", value: 900),
-    ChartDataPoint(label: "Mar", value: 4000),
-    ChartDataPoint(label: "Apr", value: 8500),
-    ChartDataPoint(label: "May", value: 600)
-   ]
 
 
 

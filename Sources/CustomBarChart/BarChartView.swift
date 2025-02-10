@@ -32,7 +32,7 @@ public struct BarChartView: View {
                             VStack(spacing: 4) {
                                 Text("\(Int(point.value))")
                                     .font(.caption.bold())
-                                Text("\(configuration.chooseCurrency)")
+                                Text("\(configuration.yAxisUnit)")
                                     .font(.caption2)
                                     .foregroundColor(.secondary)
                             }

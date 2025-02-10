@@ -6,7 +6,7 @@ public struct ChartConfiguration {
     public let selectedGradient: Gradient
     public let xAxisLabel: String
     public let yAxisLabel: String
-    public let chooseCurrency: String
+    public let yAxisUnit: String
     public static let `default` = ChartConfiguration()
     
     public init(
@@ -15,13 +15,13 @@ public struct ChartConfiguration {
         selectedGradient: Gradient = Gradient(colors: [.purple.opacity(0.6), .purple]),
         xAxisLabel: String = "Month",
         yAxisLabel: String = "Value",
-        chooseCurrency: String = "USD"
+        yAxisUnit: String = "USD"
     ) {
         self.maxValue = maxValue
         self.barGradient = barGradient
         self.selectedGradient = selectedGradient
         self.xAxisLabel = xAxisLabel
         self.yAxisLabel = yAxisLabel
-        self.chooseCurrency = chooseCurrency
+        self.yAxisUnit = yAxisUnit
     }
 }

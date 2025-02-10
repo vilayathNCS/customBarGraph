@@ -56,5 +56,5 @@ struct SalesReportView: View {
 ```
 
 # Image
-![image alt](https://github.com/vilayathNCS/customBarGraph/blob/f930d794fbb0d48a45ec31a2aba4e217771ad989/landscapeBar.png)
-![image alt](https://github.com/vilayathNCS/customBarGraph/blob/ceaa8f07bc9f5e8b2196762160e2f1ce5c3bc64c/portraitBar.png)
+![image alt](https://github.com/vilayathNCS/customBarGraph/blob/ddd1132b449f5ac92f586113404d1f0400d984fb/landscapeBar.png)
+![image alt](https://github.com/vilayathNCS/customBarGraph/blob/ddd1132b449f5ac92f586113404d1f0400d984fb/portraitBar.png)

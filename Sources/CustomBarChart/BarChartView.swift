@@ -1,17 +1,14 @@
 import SwiftUI
 import Charts
 
-
 public struct BarChartView: View {
     @StateObject private var viewModel: BarChartViewModel
-    private let configuration: ChartConfiguration
     
     public init(
         data: [ChartDataPoint],
-        configuration: ChartConfiguration = .default
+        configuration: ChartConfiguration
     ) {
-        self._viewModel = StateObject(wrappedValue: BarChartViewModel(data: data))
-        self.configuration = configuration
+        self._viewModel = StateObject(wrappedValue: BarChartViewModel(data: data, configuration: configuration))
     }
     
     public var body: some View {
@@ -19,12 +16,12 @@ public struct BarChartView: View {
             Chart {
                 ForEach(viewModel.chartData) { point in
                     BarMark(
-                        x: .value(configuration.xAxisLabel, point.label),
-                        y: .value(configuration.yAxisLabel, viewModel.animateChart ? point.value : 0)
+                        x: .value(viewModel.configuration.xAxisLabel, point.label),
+                        y: .value(viewModel.configuration.yAxisLabel, viewModel.animateChart ? point.value : 0)
                     )
                     .foregroundStyle(
                         viewModel.selectedBar?.id == point.id ?
-                        configuration.selectedGradient : configuration.barGradient
+                        viewModel.configuration.selectedGradient : viewModel.configuration.barGradient
                     )
                     .cornerRadius(8)
                     .annotation(position: .top, spacing: 20) {
@@ -32,7 +29,7 @@ public struct BarChartView: View {
                             VStack(spacing: 4) {
                                 Text("\(Int(point.value))")
                                     .font(.caption.bold())
-                                Text("\(configuration.chooseCurrency)")
+                                Text("\(viewModel.configuration.yAxisUnit)")
                                     .font(.caption2)
                                     .foregroundColor(.secondary)
                             }
@@ -50,19 +47,19 @@ public struct BarChartView: View {
                 
                 if let selectedBar = viewModel.selectedBar {
                     RuleMark(
-                        x: .value(configuration.xAxisLabel, selectedBar.label)
+                        x: .value(viewModel.configuration.xAxisLabel, selectedBar.label)
                     )
                     .foregroundStyle(.purple.opacity(0.3))
                     .lineStyle(StrokeStyle(lineWidth: 2, dash: [5]))
                     
                     RuleMark(
-                        y: .value(configuration.yAxisLabel, selectedBar.value)
+                        y: .value(viewModel.configuration.yAxisLabel, selectedBar.value)
                     )
                     .foregroundStyle(.purple.opacity(0.3))
                     .lineStyle(StrokeStyle(lineWidth: 2, dash: [5]))
                 }
             }
-            .chartYScale(domain: 0...configuration.maxValue)
+            .chartYScale(domain: 0...viewModel.configuration.maxValue)
             .chartYAxis {
                 AxisMarks(position: .leading, values: .automatic(desiredCount: viewModel.yAxisSteps))
             }

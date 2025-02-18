@@ -7,6 +7,7 @@ class BarChartViewModel: ObservableObject {
     @Published var chartData: [ChartDataPoint]
     @Published var selectedBar: ChartDataPoint?
     @Published var animateChart = false
+    @Published var configuration: ChartConfiguration
     
     // Chart styling
     let maxValue: Double = 10000
@@ -24,8 +25,9 @@ class BarChartViewModel: ObservableObject {
     ])
     
     // MARK: - Initialization
-    init(data: [ChartDataPoint]) {
+    init(data: [ChartDataPoint], configuration: ChartConfiguration) {
         self.chartData = data
+        self.configuration = configuration
     }
     
     // MARK: - User Interaction Methods
@@ -58,4 +60,3 @@ class BarChartViewModel: ObservableObject {
         chartData.map { "\($0.label): $\(Int($0.value))" }.joined(separator: ", ")
     }
 }
-
